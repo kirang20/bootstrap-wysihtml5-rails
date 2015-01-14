@@ -5,6 +5,8 @@ require 'json'
 BASE_FOLDER = 'bootstrap3-wysihtml5/dist'
 
 def copy_javascript
+  puts "#{BASE_FOLDER}/bootstrap3-wysihtml5.min.js"
+  puts "#{BASE_FOLDER}/wysihtml5x-toolbar.min.js"
   `cp #{BASE_FOLDER}/bootstrap3-wysihtml5.min.js vendor/assets/javascripts/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.js`
   `cp #{BASE_FOLDER}/wysihtml5x-toolbar.min.js vendor/assets/javascripts/bootstrap-wysihtml5/wysihtml5x-toolbar.min.js`
 end
@@ -24,8 +26,6 @@ task 'update' do
   #
   copy_javascript
   copy_css
-
-  system("git status")
 end
 
 desc "Build"
